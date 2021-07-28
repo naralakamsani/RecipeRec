@@ -33,6 +33,9 @@ def main():
     missed_ingredient_numbers = []
     # keys = recipe names, values = missed ingdts per recipe
     missed_ingredient_names = {}
+    missed_ingredient_aisles = {}
+
+
 
     if request.method == 'POST':
 
@@ -58,12 +61,12 @@ def main():
 
         for i in range(len(recipe_json)):
             for ingredient in recipe_json[i]['missedIngredients']:
-
                 if recipe_json[i]['title'] not in missed_ingredient_names:
                     missed_ingredient_names[recipe_json[i]['title']] = []
-
+                if recipe_json[i]['title'] not in missed_ingredient_aisles:
+                    missed_ingredient_aisles[recipe_json[i]['title']] = []
                 missed_ingredient_names[recipe_json[i]['title']].append(ingredient['name'])
-
+                missed_ingredient_aisles[recipe_json[i]['title']].append(ingredient['aisle'])
             recipes.append(recipe_json[i]['title'])
             images.append(recipe_json[i]['image'])
             missed_ingredient_numbers.append(recipe_json[i]['missedIngredientCount'])
