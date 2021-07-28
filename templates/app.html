@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<title>RecipeRec</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif
+  }
+
+  body,
+  html {
+    height: 91%;
+    line-height: 1.8;
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-color: #9ddeb9;
+    min-height: 100%;
+  }
+
+  .w3-bar .w3-button {
+    padding: 18px;
+  }
+
+  .w3-bar .w3-button:hover {
+    color: #17452b !important;
+    background-color: rgba(255, 255, 255, 0) !important
+  }
+
+  .brlarge {
+    display: block;
+    margin-bottom: 2em;
+  }
+
+  .img {
+    border: black;
+    border-width: 10px;
+  }
+
+  .alert {
+    background: gray;
+    padding: 20rem;
+    border-radius: 5px;
+    color: white;
+    margin-left: 55rem;
+    margin-right: 100rem;
+  }
+
+  .color {
+    color: black !important;
+    background-color: #fed8b1 !important
+  }
+
+  .w3-theme-l5 {
+    color: #000 !important;
+    background-color: #f0faf5 !important
+  }
+
+  .w3-theme-l4 {
+    color: #000 !important;
+    background-color: #ceefdc !important
+  }
+
+  .w3-theme-l3 {
+    color: #000 !important;
+    background-color: #9ddeb9 !important
+  }
+
+  .w3-theme-l2 {
+    color: #000 !important;
+    background-color: #6cce97 !important
+  }
+
+  .w3-theme-l1 {
+    color: #fff !important;
+    background-color: #3ebb74 !important
+  }
+
+  .w3-theme-d1 {
+    color: #fff !important;
+    background-color: #297c4d !important
+  }
+
+  .w3-theme-d2 {
+    color: #fff !important;
+    background-color: #256e45 !important
+  }
+
+  .w3-theme-d3 {
+    color: #fff !important;
+    background-color: #20603c !important
+  }
+
+  .w3-theme-d4 {
+    color: #fff !important;
+    background-color: #1c5333 !important
+  }
+
+  .w3-theme-d5 {
+    color: #fff !important;
+    background-color: #17452b !important
+  }
+
+  .w3-theme-light {
+    color: #000 !important;
+    background-color: #f0faf5 !important
+  }
+
+  .w3-theme-dark {
+    color: #fff !important;
+    background-color: #17452b !important
+  }
+
+  .w3-theme-action {
+    color: #fff !important;
+    background-color: #17452b !important
+  }
+
+  .w3-theme {
+    color: #fff !important;
+    background-color: #2e8b57 !important
+  }
+
+  .w3-text-theme {
+    color: #2e8b57 !important
+  }
+
+  .w3-border-theme {
+    border-color: #2e8b57 !important
+  }
+
+  .w3-hover-theme:hover {
+    color: #fff !important;
+    background-color: #2e8b57 !important
+  }
+
+  .w3-hover-text-theme:hover {
+    color: #2e8b57 !important
+  }
+
+  .w3-hover-border-theme:hover {
+    border-color: #2e8b57 !important
+  }
+
+  div.ex3 {
+    background-color: white;
+    max-height: 700px;
+    overflow: auto;
+  }
+
+</style>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a class="w3-bar-item w3-wide"><img
+          src="https://intel-my.sharepoint.com/personal/damijah_carter_intel_com/Documents/Microsoft%20Teams%20Chat%20Files/Green%20Logo.png"
+          width="110" height="50" alt="RecipeRec"></a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-info-circle"></i> ABOUT</a>
+        <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRODUCT</a>
+      </div>
+
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+        onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-container w3-center w3-theme-l3" style="padding:128px 16px" id="pricing">
+      <h3><b><i class="fa fa-dashboard"></i> RecipeRec Dashboard</b></h3>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name=file onchange="form.submit()" id="real-file" hidden="hidden" />
+        <a class="w3-bar-item w3-button" id="custom-button"><i class="fa fa-upload fa-2x"></i> DEMO UPLOAD</a>
+      </form>
+      <div class="w3-row-padding" style="margin-top:64px">
+
+        <div class="w3-half w3-section ex3">
+          <ul class="w3-ul w3-white w3-hover-shadow">
+            <li class="w3-theme-d5 w3-xlarge w3-padding-48">Ingredients</li>
+            {% for ingredient in ingredients: %}
+            <li class="w3-padding-16">{{ ingredient }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="w3-half w3-section ex3">
+          <ul class="w3-ul w3-white w3-hover-shadow">
+            <li class="w3-theme-d5 w3-xlarge w3-padding-48">Recipes</li>
+            {% if images %}
+            {% for i in range(recipes|length): %}
+            {% if missed_ingredient_numbers[i] == 0 %}
+            <div class="w3-half w3-section">
+              <li style="font-size:20px" class="w3-padding-16 w3-center"><u>Missing Ingredients</u></li>
+              <li class="w3-padding-16 w3-center">None</li>
+            </div>
+            <div class="w3-half w3-section">
+              <img src={{ images[i] }} width="200" height="234" style="border: 5px solid black;">
+              <li style="font-size:20px" class="w3-padding-16 w3-center"><b>{{ recipes[i].split("(")[0] }}</b></li>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% for i in range(recipes|length): %}
+            {% if missed_ingredient_numbers[i] != 0 %}
+            <div class="w3-half w3-section">
+              <li style="font-size:20px" class="w3-padding-16 w3-center"><u>Missing Ingredients</u></li>
+              {% for ingredient in missed_ingredient_names.get(recipes[i]): %}
+                <li class="w3-padding-16 w3-center">{{ingredient}}</li>
+              {%endfor%}
+            </div>
+            <div class="w3-half w3-section">
+              <img src={{ images[i] }} width="200" height="234" style="border: 5px solid black;">
+              <li style="font-size:20px" class="w3-padding-16 w3-center"><b>{{ recipes[i].split("(")[0] }}</b></li>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <li class="w3-padding-16"> {{ recipes[0] }} </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">ABOUT THE COMPANY</h3>
+    <p class="w3-center w3-large">Key features of our company</p>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large">Responsive</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Passion</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Design</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.</p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large">Support</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Section -->
+  <div class="w3-container w3-center w3-theme-l3" style="padding:128px 16px" id="pricing">
+    <h3>PRICING</h3>
+    <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+    <div class="w3-row-padding" style="margin-top:64px">
+      <div class="w3-half w3-section">
+        <ul class="w3-ul w3-white w3-hover-shadow">
+          <li class="w3-theme-d5 w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16"><b>10GB</b> Storage</li>
+          <li class="w3-padding-16"><b>10</b> Emails</li>
+          <li class="w3-padding-16"><b>10</b> Domains</li>
+          <li class="w3-padding-16"><b>Endless</b> Support</li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-half w3-section">
+        <ul class="w3-ul w3-white w3-hover-shadow">
+          <li class="w3-theme-d5 w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16"><b>10GB</b> Storage</li>
+          <li class="w3-padding-16"><b>10</b> Emails</li>
+          <li class="w3-padding-16"><b>10</b> Domains</li>
+          <li class="w3-padding-16"><b>Endless</b> Support</li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Powered by <a title="RecipeRec" target="_blank" class="w3-hover-text-green">RecipeRec</a></p>
+  </footer>
+
+  <script type="text/javascript">
+    const realFileBtn = document.getElementById("real-file");
+    const customBtn = document.getElementById("custom-button");
+
+    customBtn.addEventListener("click", function () {
+      realFileBtn.click();
+    });
+  </script>
+
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
