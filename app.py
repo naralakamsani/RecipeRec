@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, render_template, request
 import urllib3
 import requests
@@ -13,8 +12,12 @@ app = Flask(__name__)
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-#Variables for the upload
+#Variables for the
 UPLOAD_FOLDER = 'uploads'
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'mov'])
 
